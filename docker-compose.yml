@@ -3,7 +3,7 @@ services:
   frontend:
     build:
       context: ./client
-    image: yolo-frontend-app:v1.0 
+    image: yolo-frontend-app:v1.0.1
     ports:
       - '8081:80'
     depends_on:
@@ -14,7 +14,7 @@ services:
   backend:
     build:
       context: ./backend
-    image: yolo-backend-app:v2.0 
+    image: yolo-backend-app:v2.0.2
     ports:
       - '3001:3000'
     environment:
@@ -22,7 +22,7 @@ services:
     networks:
       - mynetwork
   mongo:
-    image: mongo:latest
+    image: mongo:6.0
     ports:
       - '27017:27017'
 networks:
