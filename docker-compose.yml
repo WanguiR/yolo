@@ -1,0 +1,30 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./client
+    ports:
+      - '8080:80'
+    depends_on:
+      - backend
+    networks:
+      - mynetwork
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - '3000:3000'
+    environment:
+      MONGO_URI: 'mongodb://mongo:27017/yolomy'
+    networks:
+      - mynetwork
+  mongo:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+networks:
+  mynetwork:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16
