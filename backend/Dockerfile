@@ -1,5 +1,5 @@
-# official Node.js runtime as a parent image
-FROM node:14
+# Use an official lightweight Node.js base image
+FROM node:14-alpine
 
 # working directory 
 COPY package*.json ./
