@@ -17,7 +17,8 @@ Run the folllowing to start the app
  `npm start`
 
 ## Docker-compose Networking (Application port allocation and a bridge network implementation) where necessary.
-Created a network named `my network` with the driver `bridge`
+Created a network named `my network` with the driver `bridge`. 
+Used the network to connect all docker containers to enable communication
 Allocated different ports to the images that built the containers,Initially I had allocated port 8080 but noticed it was in use by another service so I switched that
 Ports allocated for 
 1. yolo-frontend-1 container - 8888:80
