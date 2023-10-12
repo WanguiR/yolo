@@ -24,7 +24,8 @@ Run the folllowing to start the app
  `npm start`
 
 ## Docker-compose Networking (Application port allocation and a bridge network implementation) where necessary.
-Created a network named `my network` with the driver `bridge`
+Created a network named `my network` with the driver `bridge`. 
+Used the network to connect all docker containers to enable communication
 Allocated different ports to the images that built the containers,Initially I had allocated port 8080 but noticed it was in use by another service so I switched that
 Ports allocated for 
 1. yolo-frontend-1 container - 8888:80
@@ -40,6 +41,12 @@ Used `git commit -m "*message*"` to commit any new changes made and for specific
 Used `git push` to push changes made locally to my github repository
 
 ## Successful running of the applications and if not, debugging measures applied.
+My application has so far not run successfuly. 
+I have not been able to open it on browser accessing using the port alloxated to front end `port 8888:80`
+Debugging measures
+#re allocating to ports to avoid conflicts
+#added a command to keep the frontend container up as I thought the run and exit was why I couldnt access localhost/:8888
+ I am still debugging to see where the issue could be 
 Application run successfully and data insertion into the Products field on the website was successful.
 After checking through `docker logs` into the mongodb container for the insertions and time stamps
 
