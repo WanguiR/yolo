@@ -1,3 +1,10 @@
+## Application Set up
+To set up this containerized application follow the following commands 
+`git clone https://github.com/WanguiR/yolo` 
+`sudo docker compose build` 
+`sudo docker compose up` 
+The containerized application will be running on your computer. Easy and quick,right?
+
 ## Choice of the base image on which to build each container.
 Built three containers:
  1. yolo-frontend-1  built from image yolo-frontend-app:v1.0.1
@@ -33,12 +40,8 @@ Used `git commit -m "*message*"` to commit any new changes made and for specific
 Used `git push` to push changes made locally to my github repository
 
 ## Successful running of the applications and if not, debugging measures applied.
-My application has so far not run successfuly. 
-I have not been able to open it on browser accessing using the port alloxated to front end `port 8888:80`
-Debugging measures
- #re allocating to ports to avoid conflicts
- #added a command to keep the frontend container up as I thought the run and exit was why I couldnt access localhost/:8888
- I am still debugging to see where the issue could be 
+Application run successfully and data insertion into the Products field on the website was successful.
+After checking through `docker logs` into the mongodb container for the insertions and time stamps
 
 
 ## Good practices such as Docker image tag naming standards for ease of identification of images and containers. 
